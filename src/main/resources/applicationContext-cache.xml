@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+       default-lazy-init="true">
+
+    <context:annotation-config/>
+
+    <!--&lt;!&ndash; Redis &ndash;&gt;-->
+    <!--<bean id="connectionFactory"-->
+    <!--class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">-->
+    <!--<property name="usePool" value="true"/>-->
+    <!--<property name="hostName" value="${redis.host}"/>-->
+    <!--<property name="port" value="${redis.port}"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">-->
+    <!--<property name="connectionFactory" ref="connectionFactory"/>-->
+    <!--</bean>-->
+
+    <!--<bean name="genericObjectPoolConfig" class="org.apache.commons.pool2.impl.GenericObjectPoolConfig">-->
+    <!--<property name="maxWaitMillis" value="-1"/>-->
+    <!--<property name="maxTotal" value="1000"/>-->
+    <!--<property name="minIdle" value="8"/>-->
+    <!--<property name="maxIdle" value="100"/>-->
+    <!--</bean>-->
+
+    <!--<bean id="jedisCluster" class="com.yonghui.common.cache.JedisClusterFactory">-->
+    <!--<property name="addressConfig">-->
+    <!--<value>classpath:config.properties</value>-->
+    <!--</property>-->
+    <!--<property name="addressKeyPrefix" value="address"/>   &lt;!&ndash; 属性文件里 key的前缀 &ndash;&gt;-->
+
+    <!--<property name="timeout" value="300000"/>-->
+    <!--<property name="maxRedirections" value="6"/>-->
+    <!--<property name="genericObjectPoolConfig" ref="genericObjectPoolConfig"/>-->
+    <!--</bean>-->
+    <!-- spring -->
+
+
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxWaitMillis" value="-1"/>
+        <property name="maxTotal" value="1000"/>
+        <property name="minIdle" value="8"/>
+        <property name="maxIdle" value="100"/>
+    </bean>
+
+    <bean id="connectionFactory"
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <constructor-arg name="clusterConfig" ref="redisClusterConfig"/>
+        <property name="hostName" value="${redis.host:}"/>
+        <property name="port" value="${redis.port:6379}"/>
+        <property name="poolConfig" ref="jedisPoolConfig"/>
+    </bean>
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
+        </property>
+        <property name="hashKeySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+        <property name="hashValueSerializer">
+            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
+        </property>
+    </bean>
+
+    <bean id="redisClusterConfig" class="com.yonghui.common.cache.YHRedisClusterConfigurationFactory"
+          factory-method="createRedisClusterConfiguration">
+        <constructor-arg index="0" value="${redis.cluster.url:}"/>
+        <constructor-arg index="1" value="${redis.cluster.max.redirects:}"/>
+    </bean>
+
+</beans>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo 
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:application name="thirdparty-api-server"/>
+    <!--192.168.223.33--> <!-- new stage 10.19.187.125--> <!--qa2 10.19.165.146--> <!--qa3 10.19.14.51-->
+    <dubbo:registry address="zookeeper://localhost:2181" id="zookeeperService"/><!--10.19.165.146-->
+                     
+    <!-- 声明需要暴露的服务接口 -->
+	<dubbo:reference interface="com.yonghui.thirdparty.api.notification.AppNotificationService"
+		id="appNotificationService" protocol="dubbo" timeout="15000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:reference group="marketingSender" interface="com.yonghui.thirdparty.api.sms.Sender" 
+    	id="marketingSender" protocol="dubbo" timeout="300000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference group="industrySender" interface="com.yonghui.thirdparty.api.sms.Sender"
+					 id="industrySender" protocol="dubbo" timeout="300000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
+	<!-- 声明需要暴露的服务接口 -->
+	<dubbo:reference interface="com.yonghui.product.service.api.SkuShopStockService"
+					 id="skuShopStockService" protocol="dubbo" timeout="15000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.product.service.api.SkuManageService"
+					 id="skuManageService" protocol="dubbo" timeout="1500000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.product.service.api.CombineSkuService"
+					 id="combineSkuService" protocol="dubbo" timeout="15000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
+	<dubbo:reference interface="com.yonghui.product.service.api.SkuService"
+					 id="skuService" protocol="dubbo" timeout="15000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.product.sku.center.api.SkuService"
+					 id="sSkuService" protocol="dubbo" timeout="15000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.product.sku.center.api.CityService"
+					 id="cityService" protocol="dubbo" timeout="15000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+    <dubbo:reference interface="com.yonghui.product.service.api.ShopService"
+                     id="shopService" protocol="dubbo" timeout="15000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.product.hub.service.api.ScanCodeHubService"
+					 id="scanCodeHubService" protocol="dubbo" timeout="15000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
+	<dubbo:reference id="eventMessageService" interface="com.yonghui.message.bridge.api.EventMessageService"
+					 check="false" version="1.0" url="" registry="zookeeperService" protocol="dubbo" timeout="15000"/>
+	<!--调用 message-bridge 服务-->
+	<dubbo:reference id="registrationService" interface="com.yonghui.message.bridge.api.RegistrationService"
+					 check="false" version="1.0" url="" registry="zookeeperService" protocol="dubbo" timeout="15000"/>
+	<dubbo:reference id="gVendorOrgService" interface="com.yonghui.product.service.api.GVendorOrgService"
+					 check="false" version="1.0" url="" registry="zookeeperService" protocol="dubbo" timeout="15000"/>
+
+	<dubbo:reference id="dashSummaryService" interface="com.yonghui.bi.data.api.DashSummaryService"
+					 check="false" version="1.0" url="" registry="zookeeperService" protocol="dubbo" timeout="15000"/>
+	<dubbo:reference interface="com.yonghui.product.hub.service.api.OverlapShopService"
+					 id="overlapShopService" protocol="dubbo" timeout="1000000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
+	<dubbo:reference interface="com.yonghui.product.hub.service.api.IProductPriceService"
+					 id="productPriceService" protocol="dubbo" timeout="1000000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
+	<dubbo:reference interface="com.yonghui.promotion.service.api.PromotionMakeupService"
+					 id="promotionMakeupService" protocol="dubbo" timeout="1000000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
+	<dubbo:reference interface="com.yonghui.product.service.api.VendorService"
+					 id="vendorService" protocol="dubbo" timeout="1000000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
+	<dubbo:reference interface="com.yonghui.apppush.api.AppPushApiService"
+					 id="appPushApiService" protocol="dubbo" timeout="1000000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
+	<dubbo:reference interface="com.yonghui.product.hub.service.api.PosSkuHubService"
+					 id="posSkuHubService" protocol="dubbo" timeout="1000000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
+	<dubbo:reference interface="com.yonghui.product.service.api.SkuShopPriceService"
+					 id="skuShopPriceService" protocol="dubbo" timeout="1000000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
+	<dubbo:reference interface="com.yonghui.product.service.api.PosSkuService"
+					 id="posSkuService" protocol="dubbo" timeout="1000000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.apppush.api.AppPushSyncDataService"
+					 id="appPushSyncDataService" protocol="dubbo" timeout="1000000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.product.service.api.SpuService"
+					 id="spuService" protocol="dubbo" timeout="1000000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.product.service.api.CategoryService"
+					 id="categoryService" protocol="dubbo" timeout="1000000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.product.es.hub.api.EsSkuManageService"
+					 id="esSkuManageService" protocol="dubbo" timeout="15000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.product.es.hub.api.SyncSkuShopService"
+					 id="syncSkuShopService" protocol="dubbo" timeout="15000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
+	<dubbo:reference interface="com.yonghui.shop.stock.center.api.ShopStockService"
+					 id="shopStockService" protocol="dubbo" timeout="15000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.jituan.product.center.api.VendorService"
+					 id="jVendorService" protocol="dubbo" timeout="15000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.product.sku.center.api.ShopService"
+					 id="skuShopService" protocol="dubbo" timeout="300000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.sync.stock.hub.api.SyncShopStockService"
+					 id="syncShopStockService" protocol="dubbo" timeout="10000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
+	<dubbo:reference interface="com.yonghui.shop.price.center.api.ShopPriceService"
+					 id="shopPriceService" protocol="dubbo" timeout="10000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.jituan.shop.product.center.api.SkuVendorService"
+					 id="skuVendorService" protocol="dubbo" timeout="10000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<dubbo:reference interface="com.yonghui.product.service.api.yhshop.TabCategoryService"
+					 id="tabCategoryService" protocol="dubbo" timeout="10000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+	<!--<dubbo:reference interface="com.yonghui.product.es.hub.api.ShopSkuService"-->
+					 <!--id="shopSkuService" protocol="dubbo" timeout="10000" retries="0" check="false" version="1.0" registry="zookeeperService" />-->
+
+</beans>

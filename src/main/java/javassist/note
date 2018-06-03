@@ -1,0 +1,21 @@
+javassist的基本功能
+
+Javassist是一个动态类库，可以用来检查、”动态”修改以及创建 Java类。其功能与jdk自带的反射功能类似，但比反射功能更强大。
+
+重要的类
+
+ClassPool：javassist的类池，使用ClassPool 类可以跟踪和控制所操作的类,它的工作方式与 JVM 类装载器非常相似，
+CtClass： CtClass提供了检查类数据（如字段和方法）以及在类中添加新字段、方法和构造函数、以及改变类、父类和接口的方法。不过，Javassist 并未提供删除类中字段、方法或者构造函数的任何方法。
+CtField：用来访问域
+CtMethod ：用来访问方法
+CtConstructor：用来访问构造器
+
+ClassPool classPool = ClassPool.getDefault();
+CtClass ctClass = classPool.get("org.light.lab.JavassistTest");
+CtMethod ctMethod = ctClass.getDeclaredMethod("test");
+ctMethod.setBody("System.out.println(\"this method is changed dynamically!\");");
+ctClass.toClass();
+
+与aspectj的区别
+
+使用aspectj也可以同样达到修改的效果，不过修改指定的类，则需要为修改这个类添加一个aspect，然后将这个aspect加入配置文件中以使其生效，比起javassist来说，修改一个类还是使用javassist相对简单一点。
