@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.yonghui:yhtrace-interface:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/yhtrace-interface/1.0-SNAPSHOT/yhtrace-interface-1.0-20170925.052621-19.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/yhtrace-interface/1.0-SNAPSHOT/yhtrace-interface-1.0-20170925.052621-19-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/yhtrace-interface/1.0-SNAPSHOT/yhtrace-interface-1.0-20170925.052621-19-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.yonghui:apppush-api:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/apppush-api/1.0-SNAPSHOT/apppush-api-1.0-20180507.135845-43.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/apppush-api/1.0-SNAPSHOT/apppush-api-1.0-20180507.135845-43-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/apppush-api/1.0-SNAPSHOT/apppush-api-1.0-20180507.135845-43-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

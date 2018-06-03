@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.yonghui:shop-stock-center-api:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/shop-stock-center-api/1.0-SNAPSHOT/shop-stock-center-api-1.0-20180510.095541-105.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/shop-stock-center-api/1.0-SNAPSHOT/shop-stock-center-api-1.0-20180510.095541-105-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/shop-stock-center-api/1.0-SNAPSHOT/shop-stock-center-api-1.0-20180510.095541-105-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

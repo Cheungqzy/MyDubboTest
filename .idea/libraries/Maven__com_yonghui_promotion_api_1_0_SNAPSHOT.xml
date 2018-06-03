@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.yonghui:promotion-api:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/promotion-api/1.0-SNAPSHOT/promotion-api-1.0-20180515.063214-245.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/promotion-api/1.0-SNAPSHOT/promotion-api-1.0-20180515.063214-245-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/promotion-api/1.0-SNAPSHOT/promotion-api-1.0-20180515.063214-245-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

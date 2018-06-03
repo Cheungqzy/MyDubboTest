@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.yonghui:framework-web:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/framework-web/1.0-SNAPSHOT/framework-web-1.0-20180523.025433-775.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/framework-web/1.0-SNAPSHOT/framework-web-1.0-20180523.025433-775-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/framework-web/1.0-SNAPSHOT/framework-web-1.0-20180523.025433-775-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

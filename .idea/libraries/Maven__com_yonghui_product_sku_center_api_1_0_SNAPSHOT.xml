@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.yonghui:product-sku-center-api:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/product-sku-center-api/1.0-SNAPSHOT/product-sku-center-api-1.0-20180519.032328-22.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/product-sku-center-api/1.0-SNAPSHOT/product-sku-center-api-1.0-20180519.032328-22-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/product-sku-center-api/1.0-SNAPSHOT/product-sku-center-api-1.0-20180519.032328-22-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

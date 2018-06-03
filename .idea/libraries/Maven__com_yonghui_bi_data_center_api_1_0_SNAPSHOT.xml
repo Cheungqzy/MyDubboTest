@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.yonghui:bi-data-center-api:1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/bi-data-center-api/1.0-SNAPSHOT/bi-data-center-api-1.0-20180515.091524-56.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/bi-data-center-api/1.0-SNAPSHOT/bi-data-center-api-1.0-20180515.091524-56-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/yonghui/bi-data-center-api/1.0-SNAPSHOT/bi-data-center-api-1.0-20180515.091524-56-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
