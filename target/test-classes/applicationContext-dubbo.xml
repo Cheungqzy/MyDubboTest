@@ -98,7 +98,8 @@
 					 id="skuVendorService" protocol="dubbo" timeout="10000" retries="0" check="false" version="1.0" registry="zookeeperService" />
 	<dubbo:reference interface="com.yonghui.product.service.api.yhshop.TabCategoryService"
 					 id="tabCategoryService" protocol="dubbo" timeout="10000" retries="0" check="false" version="1.0" registry="zookeeperService" />
-	<!--<dubbo:reference interface="com.yonghui.product.es.hub.api.ShopSkuService"-->
-					 <!--id="shopSkuService" protocol="dubbo" timeout="10000" retries="0" check="false" version="1.0" registry="zookeeperService" />-->
+	<dubbo:reference interface="com.yonghui.product.sku.center.api.PropertyValueService"
+					 id="propertyValueService" protocol="dubbo" timeout="10000" retries="0" check="false" version="1.0" registry="zookeeperService" />
+
 
 </beans>

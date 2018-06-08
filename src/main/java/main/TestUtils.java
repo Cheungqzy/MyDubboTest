@@ -1,6 +1,12 @@
 package main;
 
+import com.alibaba.fastjson.JSON;
+
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Cheungqzy on 2017/6/23.
@@ -8,9 +14,12 @@ import java.math.BigDecimal;
 public class TestUtils {
 
     public static void main(String[] args) {
-
-        System.out.println(new BigDecimal(1.1).divide(new BigDecimal(3),2, BigDecimal.ROUND_DOWN));
-
+        Map<String, String> map = new HashMap<>();
+        map.put("1", "1");
+        map.put("2", "2");
+        map.keySet().forEach(ele->{
+            System.out.println(ele.toString());
+        });
     }
 
 }

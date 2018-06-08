@@ -47,8 +47,6 @@ public class SyncEsShopProductTest {
 
     @Test
     public void getSkuList(){
-        List<String > res = esSkuManageService.getSkuCodeListByCategoryIdsAndShopId("9I01", 0, 10);
-        System.out.println(JSON.toJSONString(res));
     }
 
     @Test

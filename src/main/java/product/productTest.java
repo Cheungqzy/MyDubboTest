@@ -35,6 +35,7 @@ import com.yonghui.product.service.api.SkuShopPriceService;
 import com.yonghui.product.service.api.SkuShopStockService;
 import com.yonghui.product.service.api.VendorService;
 import com.yonghui.product.sku.center.api.CityService;
+import com.yonghui.product.sku.center.api.PropertyValueService;
 import com.yonghui.product.sku.center.dto.CityTinyDTO;
 import com.yonghui.product.sku.center.dto.ShopDTO;
 import com.yonghui.product.sku.center.dto.ShopTinyDTO;
@@ -125,22 +126,27 @@ public class productTest implements ApplicationContextAware,Runnable {
     private ShopPriceService shopPriceService;
     @Autowired
     private com.yonghui.jituan.shop.product.center.api.SkuVendorService skuVendorService;
+    @Autowired
+    private PropertyValueService propertyValueService;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
     }
 
+
     @Test
     public void test1x13(){
-        Map<String, String> map = shopPriceService.selectAllShortSkuMapByShopId("9D13");
-        System.out.println("---"+map.size());
+        System.out.println();
+        HashMap<String, String> spuSpecSkuCodeByList = (HashMap<String, String>) propertyValueService.getSpuSpecSkuCodeByList(Arrays.asList("S-916488", "S-898669"));
+        System.out.println(JSON.toJSON(spuSpecSkuCodeByList));
+        System.out.println();
     }
 
     @Test
     public void test1x12(){
         System.out.println(skuService.isItem("123;123;"));
-        skuService.getSkuGroupInfo("asd", null);
+        //skuService.getSkuGroupInfo("asd", null);
     }
 
     @Test
